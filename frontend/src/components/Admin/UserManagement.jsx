@@ -7,6 +7,7 @@ import {
   fetchUsers,
   updateUser,
 } from "../../redux/slices/adminSlice";
+import { FaPlus } from "react-icons/fa";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
@@ -70,9 +71,9 @@ const UserManagement = () => {
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       {/* Add New User Form */}
-      <div className="p-6 rounded-lg mb-6">
+      <div className="rounded-lg mb-8 p-6 shadow-md">
         <h3 className="text-lg font-bold mb-4">Add New User</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
           <div className="mb-4">
             <label className="block text-gray-700">Name</label>
             <input
@@ -120,7 +121,7 @@ const UserManagement = () => {
           </div>
           <button
             type="submit"
-            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+            className="w-60 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
           >
             Add User
           </button>

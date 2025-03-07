@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Left - Logo */}
         <div>
           <Link to="/" className="text-2xl font-medium">
-            Rabbit
+            Ashaya
           </Link>
         </div>
         {/* Center - Navigation Links */}
@@ -73,6 +73,11 @@ const Navbar = () => {
             >
               Admin
             </Link>
+          )}
+          {user && user.role === "customer" && (
+            <button className="px-4 py-2 rounded-lg bg-rabbit-red text-white text-sm font-medium shadow-md hover:bg-gray-700 transition-all duration-300">
+              {user.name}
+            </button>
           )}
 
           <Link to="/profile" className="hover:text-black">
